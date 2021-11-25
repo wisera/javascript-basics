@@ -85,6 +85,101 @@ let type = points > 100 ? 'gold' : 'silver';
 // so it's like
 // condition ? 'true' : 'false'
 
+// There are also Logical Operators
+// There's the Logical 'and' and the Logical 'or' operator
+// Logical and is represented by &&
+// Logical or is represented by ||
+
+// Logical AND (&&) returns true if both operands are TRUE
+// for example:
+
+console.log( true && true);
+
+// if either of the operands is false then it evaluate to false
+x = 2
+console.log(x > 2 && x == 2); // false and true evaluates to false
+
+// Logical OR (||) returns true if at least one condition is met
+// for example:
+
+console.log(true || false); // true or false evaluates to true
+x = 2
+console.log(x > 2 || x == 2); // false or true evaluates to true
+
+// There's also the NOT (!) operator
+// represented by exaclamation mark
+
+// REMEMBER //
+
+// The result of a logical expression does not always return a boolean (true or false)
+// It depends on the value of the operands
+// for example:
+
+console.log(false || 'luan') // returns 'luan'
+
+// 'luan' gets interpreted as true
+//'luan' is a truthy value
+
+// Falsy (false) values
+// undefined
+// null
+// 0
+// Nan
+// '' (empty string)
+// false
+
+// Anything not Falsy -> Truthy
+
+// An example of using the Logical OR w/ non boolean values is providing default values
+// ex.:
+
+let userColor = 'red';
+let defaultColor = 'green';
+let currentColor = userColor || defaultColor
+console.log(currentColor)
+
+// In this case the currentColor will be the selected userColor
+
+// But if the userColor is undefined, the currentColor will be defaultColor
+
+
+let userColor = undefined;
+let defaultColor = 'green';
+let currentColor = userColor || defaultColor
+console.log(currentColor)
+
+// Logic is: false or true = true
+// In this case userColor is false and currentColor is true
+
+// In a case of a condition w/ 3 non boolean values, the first true value gets chosen
+// ex.:
+
+console.log( null || undefined || 'luan' || false || true);
+
+// in this case it will return 'luan' because it is the first true value
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
