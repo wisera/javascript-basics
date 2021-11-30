@@ -48,7 +48,3 @@ function square(number) {
 console.log(square(2))
 
 // the return inside the function returns a value when you call the function
-
-
-
-
