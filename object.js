@@ -119,3 +119,22 @@ console.log(circle2); // shows properties of the new var associated to the funct
 console.log(circle2.radius); // shows the given property
 console.log(circle2.draw()); // calls the method
 
+// Another thing to remember form objects in JS is that they are dynamic in nature
+// meaning you can add properties outside the object definition
+// ex.:
+
+const square = { // object square created
+    length: 4
+};
+
+console.log(square) // square object properties so far
+console.log(square.length) // call to lenght property of sqaure object
+
+square.width = 4 // dinamically adding width property to square object
+square.name = 'luan' // notice how dinamically is adding outside the original square object call
+console.log(square.width) // call to new property added
+console.log(square.name) // again
+console.log(square) // now you see the new dinamically added properties in the original sqaure object
+
+delete square.name; // you can also delete dinamically a specific given proeprty of the object
+console.log(square) // now you see that the deleted proeprty is not part of the object anymore
