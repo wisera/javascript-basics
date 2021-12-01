@@ -84,3 +84,38 @@ function createCircle(radius, x, y) {
 // So you create a function that returns an object
 // Thats why the name is factory, beacause w/ this type of function you can make stuff, 
 // its like a factory, you fabricate objects w/ this fucntion
+
+const circle1 = createCircle(5, 2, 2) // now you create a const based on the factory function, and you give your desired arguments
+
+console.log(circle1) // way of calling the object and see its properties
+console.log(circle.isVisible) // returns the value of isVisible property
+circle1.draw(); // way of calling the method
+
+// another way of writing this function is Constructor Function
+// 3 main differences:
+// you don't call return isnide the body of the function
+// you use this. instead
+// to call this new object you must use new
+// and you use Pacal Notation (OneTwoThree) opposed to Camel Case (oneTwoThree)
+// example:
+
+function CircleMake(radius,x, y) {
+    this.radius = radius // example of this. instead of return{}
+    this.x = x
+    this. y = y
+    this.location = {
+        x,
+        y
+    }
+    this.isVisible = true
+    this.draw = function() { // way of creating a method this.METHOD_NAME = function() {}
+        console.log('draw'); // basically you assign a function to a variable
+    }
+}
+
+const circle2 = new CircleMake(10, 4, 4); // way of assigning a variable to the constructor function
+
+console.log(circle2); // shows properties of the new var associated to the function created
+console.log(circle2.radius); // shows the given property
+console.log(circle2.draw()); // calls the method
+
