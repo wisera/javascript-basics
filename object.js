@@ -151,3 +151,61 @@ console.log(circle2.constructor) // this outputs the constructor function
 // let x = {} is the same as ----> let x = new Object();
 // there's also new String() for creating strings, but you just write a string w/ ''
 // the same goes for Boolean(), Number()
+
+// How to show all properties of a object
+// Here are some methods
+
+const myCircle = {
+    radius:1,
+    draw() {
+        console.log('Hello')
+    }
+}
+
+for (let key in myCircle) // this way you use a for loop to loop through keys
+    console.log(key, myCircle[key])
+
+for (let key of Object.keys(myCircle)) // this way you loop through the function Object w/ the keys method w/ your object as the argument
+    console.log(key)
+
+for (let value of Object.values(myCircle)) // this way you loop through the function Object w/ the values method w/ your object as the argument
+    console.log(value)
+
+for (let entry of Object.entries(myCircle)) // this way you loop through the Object function w/ entries method w/ your object as the arg
+    console.log(entry) // this outputs the lenght of properties and the key value pairs stored in arrays so, (2) ['radius', 1] and (2) ['draw', f] f means function
+
+if ('radius' in myCircle) console.log('yes') // this checks if there's a given proeperty in the created object
+else console.log('no')
+
+console.log(('color' in myCircle) ? 'yes':'no') // same thing as above but w/ a condition operator
+
+// HOW TO COPY/CLONE ALL THE PROPERTIES OF AN OBJECT //
+
+const myCircle2 = {
+    radius:1,
+    draw() {
+        console.log('Hello')
+    }
+}
+
+// The old school way Populating w/ a for loop
+
+const another = {}; // first you create an empty object
+
+for (key in myCircle2) // then you call a for loop to populate the empty object
+    another[key] = myCircle2[key]; // the logic is that you copied all of its contents
+
+console.log(another)
+
+// Using the Object.assign method w. the Object() function
+
+const another2 = Object.assign({}, myCircle2) // this method takes in an empty object as its first argument and an object that you want to copy the properties from
+
+console.log(another2)
+
+// The more sophisticated way, using the spread operator
+
+const another3 = {...myCircle2}  // the spread operator copies all the properties of an object, you call this operator inside an empty object and you assign it to a const
+
+
+
