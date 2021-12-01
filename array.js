@@ -33,3 +33,28 @@ console.log(numbers)
 numbers.splice(2,0,'a','b') // the first argument is to select an index point, the second argument is the number of elements to delete, if 0, the next arguments are inserted into the index position
 console.log(numbers)
 
+// Finding elements w/ primitives //
+// Remember primitives are: numbers, strings, booleans
+// examples:
+
+const numbers2 = [1, 2, 3, 1, 4]
+
+// Get index of an element //
+// This method returns the index of a an element
+console.log(numbers2.indexOf(1,2)) // The first argument is the element you are looking for, the second argument is index where you want to start from
+// this returns 3
+
+// Get last index of a given element //
+// This method return the last index of a given element
+console.log(numbers2.lastIndexOf(1)) // returns 3 
+
+// If the element you are looking for is not in the array it will return -1
+console.log(numbers2.indexOf('a'))
+
+// Check if there's a specific element in the array
+console.log(numbers2.includes('f')) // returns boolean
+
+
+
+
+
