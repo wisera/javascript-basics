@@ -138,3 +138,16 @@ console.log(square) // now you see the new dinamically added properties in the o
 
 delete square.name; // you can also delete dinamically a specific given proeprty of the object
 console.log(square) // now you see that the deleted proeprty is not part of the object anymore
+
+// REMEMBER//
+// Every object has a .constructor property
+// that property references the function that was used to create that object
+// thats why the name is contructor, because it shows who constructed/built/made it
+// example
+
+console.log(square.constructor) // this references to the Object constructor function because it was made by a factory function
+console.log(circle2.constructor) // this outputs the constructor function
+
+// let x = {} is the same as ----> let x = new Object();
+// there's also new String() for creating strings, but you just write a string w/ ''
+// the same goes for Boolean(), Number()
