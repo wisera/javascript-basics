@@ -48,3 +48,11 @@ function square(number) {
 console.log(square(2))
 
 // the return inside the function returns a value when you call the function
+
+// There are two ways of caling a function
+// Factory function and Constructor function
+
+//
+
+
+
