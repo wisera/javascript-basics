@@ -167,3 +167,57 @@ console.log(numerosNovo) // output will be the array w/out the third element (in
 // You can delete multiple elements
 numerosNovo.splice(0, 2) // will delete 2 elements starting from index 0
 console.log(numerosNovo) 
+
+// Remove ALL/empty an array //
+
+// Solution 1//
+// preferred //
+
+let fruits = ['apple','banana','orange','green apple'];
+console.log(fruits)
+
+let otherFruits = fruits; // references another variable to the original array
+console.log(otherFruits)
+
+fruits = []; // This method removes only the original array, any other references survive
+console.log(fruits) 
+console.log(otherFruits)
+
+// Solution 2 //
+// preferred //
+
+let fruits2 = ['apple','banana','orange','green apple'];
+console.log(fruits2)
+
+let otherFruits2 = fruits2; // references another variable to the original array
+console.log(otherFruits2)
+
+fruits2.length = 0; // this method removes all copies of the original array
+console.log(fruits2) 
+console.log(otherFruits2) // both are empty
+
+// Solution 3 //
+// noisy //
+
+let animals = ['tiger', 'giraffe', 'human']
+console.log(animals)
+
+let otherAnimals = animals;
+console.log(otherAnimals)
+
+animals.splice(0, animals.length) // this method removes the amount of the length of the array starting from index 0
+console.log(animals) // no elements
+console.log(otherAnimals) // both w/ no elements
+
+// Solution 4 //
+// noisy //
+
+let animals2 = ['tiger', 'giraffe', 'human']
+console.log(animals2)
+
+let otherAnimals2 = animals2;
+console.log(otherAnimals2)
+
+while (animals2.length > 0) animals2.pop() // this method creates a loop w/ the pop method, removing elements until length is 0
+console.log(animals2) // no elements
+console.log(otherAnimals2) // both w/ no elements
