@@ -134,3 +134,36 @@ const food2 = foods2.find(fruit => fruit.name === 'banana') // w/ one argument y
 // and w/ one line in the function body, you can get rid of the return and the {}
 
 console.log(food2) // returns the full matching object
+
+// Removing elements from an array //
+// Here are some ways of removing elemetns form an array
+
+// Remove the last element of an array //
+
+const numeros = [1, 2, 3, 4] // array w/ 4 elements
+console.log(numeros) // outut will be array
+
+const last = numeros.pop() // the method pop() will remove the last element of the array, you can assign that element to a variable
+console.log(numeros) // the output is the array w/ out the last original element
+console.log(last) // the last element of the array
+
+// Removing the first elelement of an array //
+
+const newnumbers = [1, 2, 3, 4]
+console.log(newnumbers)
+
+const first = newnumbers.shift() // the unshift() method will remove the first element of the array, you can assign it to a variable
+console.log(newnumbers) // the output will be the arary w/ out the first original element
+console.log(first) // the output is the original first element
+
+// Remove an element in the middle //
+
+const numerosNovo = [1, 2, 3, 4];
+console.log(numerosNovo);
+
+numerosNovo.splice(2, 1) // This method takes the first argument as the index position to start, the second argument is the number of elements to start deleting
+console.log(numerosNovo) // output will be the array w/out the third element (index 2)
+
+// You can delete multiple elements
+numerosNovo.splice(0, 2) // will delete 2 elements starting from index 0
+console.log(numerosNovo) 
