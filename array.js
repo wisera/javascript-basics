@@ -221,3 +221,66 @@ console.log(otherAnimals2)
 while (animals2.length > 0) animals2.pop() // this method creates a loop w/ the pop method, removing elements until length is 0
 console.log(animals2) // no elements
 console.log(otherAnimals2) // both w/ no elements
+
+// Combining and Slicing arrays //
+
+const firstA = [1, 2, 3];
+console.log(firstA)
+
+const second = [4, 5, 6];
+console.log(second)
+
+const combined = firstA.concat(second) // the concat() method takes an array as an argument and concatenates it ('adds the arrays')
+console.log(combined) // its output will be the concatenated array
+console.log(firstA) // it won't affect the array the method was called on
+
+// You can slice the array //
+console.log(combined)
+const slice =combined.slice(2,4) // this method takes the first argument as the index to start slicing (including) and the second arg is the index to stop (excluding)
+console.log(slice) // the output is an array w/ the sliced elements, starting from index 2 and stopping and exclduing at index 4
+console.log(combined) // it doens'nt affect the array the method was called on
+
+const slice2 = combined.slice(2) // w/ just one arg, the array is sliced starting from the index until the end
+console.log(slice2)
+
+const slice3 = combined.slice() // w/ out arguments it creates a copy of the array
+console.log(slice3)
+
+// Remember if you use reference types the object is not hard copied, it is only referenced //
+//example
+
+const firstB = [{id: 2}];
+console.log(firstB)
+
+const secondA = [4,5,6]
+console.log(secondA)
+
+const combined2 = firstB.concat(secondA)
+console.log(combined2) // outputs the combined two arrays
+
+firstB[0].id = 10 // changes a value of the object in the original array
+console.log(firstB)
+console.log(combined2) // now the combined array gets automitically changed, because its reference is copied over not its actual value because it is a reference type
+
+// SPREAD OPERATOR //
+// you can achieve the same result of slice and concat w/ the spread operator (...)
+// example
+
+const list = [1, 2, 3, 4]
+const list2 = [5, 6, 7]
+
+// Instead of using concat to combine 2 arrays, use spread operator
+
+const combination = [...list, ...list2] // the spread operator returns all of its elements individually, so it adds all the elements from the first list w/ the second
+console.log(combination)
+
+// you can also insert other elements in the middle 
+// example
+
+const combination2 = [...list, 'oi', 'ola', ...list2, 'jovem']
+console.log(combination2)
+
+// Instead of using the empty slice() method to create a copy of an array, you can use the spread operator (...)
+
+copyCombination = [...combination]
+console.log(copyCombination)
