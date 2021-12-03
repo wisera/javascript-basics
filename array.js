@@ -284,3 +284,31 @@ console.log(combination2)
 
 copyCombination = [...combination]
 console.log(copyCombination)
+
+// Iterating an array //
+
+// you can use a for loop //
+// example
+
+list3 = ['a', 'b', 'c']
+
+for (let indexEachElement in list3) // for in loop iterates the index of each element
+    console.log(indexEachElement)
+
+for (let eachElement of list3) // for of loop iterates each element
+    console.log(eachElement)
+
+// .forEach() method //
+
+list3.forEach(function(element) { // this method takes in a callback function as an argument
+    console.log(element)
+})
+
+// that means you can do arrow function
+
+list3.forEach(element => console.log(element)) // the first argument is the element
+list3.forEach((element, index) => console.log(index, element)) // the second argument is the index
+
+
+
+
