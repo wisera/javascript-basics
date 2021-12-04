@@ -309,6 +309,119 @@ list3.forEach(function(element) { // this method takes in a callback function as
 list3.forEach(element => console.log(element)) // the first argument is the element
 list3.forEach((element, index) => console.log(index, element)) // the second argument is the index
 
+// Joining the elements of an array into one element //
 
+const games = ['cod', 'bf', 'cs'];
+console.log(games);
 
+const joined = games.join(','); // combines all the elements of the array into a single element
+console.log(joined);
+console.log(typeof joined) // its a string
+
+// Useful for converting strings into a single string
+// for example converting a title of a website into a url
+// example
+
+const message2 = '2023 is here! almost'
+console.log(message2)
+
+const parts = message2.split(' ') // this string method splits its elements into an array
+console.log(parts)
+
+joined2 = parts.join('-')
+console.log(joined2)
+
+// Sorting arrays //
+// the sort method converts the elements into strings and compares their UTF values, the default order is ascending
+
+const otherNumbers = [4, 6, 8, 1, 50, 22]
+console.log(otherNumbers)
+otherNumbers.sort()
+console.log(otherNumbers) // its in ascending UTF order
+
+otherNumbers.reverse() // this method reverses the current order of the list
+console.log(otherNumbers)
+
+const lessons = ['node','javascript']
+
+lessons.sort()
+console.log(lessons) // its in alphabetical order
+
+// Using sort() w/ reference types //
+// w/ objects you use a callback function as an argument
+// in this function the first argument is the first element of the array, the second arg is the second
+// w/ these two args you can compare their values
+
+const lessons2 = [
+    {id: 1, name: 'math'},
+    {id: 2, name: 'english'}
+]
+
+lessons2.sort((firstElement,secondElement) => { 
+    if (firstElement.name < secondElement) return -1 // the logic here is, if the the first argument is smaller then don't call a sort() method (-1)
+    if (firstElement > secondElement) return 1 // if the first element is bigger then call a sort() method (1)
+    return 0;
+});
+console.log(lessons2) // the sort() method is called because the first element is smaller than the second
+
+// ATTENTION //
+// This is case sensitive, if the strings are upper case it will have a different output //
+// to avoid confusion convert the strings to lowercase or uppercase before comparing them //
+// example:
+
+lessons3 = [
+    {id : 1, name: 'Node'},
+    {id: 2, name: 'javaScript'}
+]
+
+lessons3.sort((firstElement,secondElement) => { 
+    const first = firstElement.name.toLowerCase(); // by converting to lower case the logic works again
+    const second = secondElement.name.toLowerCase();
+
+    if (first < second) return -1;
+    if (first > second) return 1
+    return 0;
+});
+
+console.log(lessons3);
+
+// REMEMBER //
+// Its not in alphabetical order, its in ascending order corresponding to their UTF value
+
+// Testing elements of an array //
+// There are two new methods every() and some()
+
+// every() method tests if every element of the array matches the following criteria, returns boolean
+// ex.:
+
+const myNumbers = [1, 0, 44, -22, 3]
+
+allPositive = myNumbers.every(element => element >= 0) // this method takes in a callback function as an argument and the frist arg of the function is the element of the array
+console.log(allPositive) // because not every element of the array matches the following condition, the output is false
+
+// some() method compares if at least one element of the array matches the following condition, returns boolean
+// ex.:
+
+somePositive = myNumbers.some(element => element >= 0)
+console.log(somePositive) // outputs true because at least one element matches the criteria
+
+// REMEMBER //
+// These two methods are new to JS
+// For this reason it may not work on some older browsers
+
+// Filter elements of an array //
+// you can use filter() method to return an array of filtered elements given a specific condition //
+// example:
+
+const myNumbers2 = [1, -1, 2, 3]
+console.log(myNumbers2)
+
+const filteredNumbers = myNumbers2
+.filter(element => element >= 0) // the first argument of this callback function is the element of the array
+.map(element => (`Hello ${element}`) + 2)
+console.log(filteredNumbers) // outputs all the elements matching the condition inside a new array
+
+// Mapping an array //
+// use map() method to map an array //
+// the map() method compare
 
