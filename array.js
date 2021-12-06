@@ -416,12 +416,40 @@ console.log(somePositive) // outputs true because at least one element matches t
 const myNumbers2 = [1, -1, 2, 3]
 console.log(myNumbers2)
 
-const filteredNumbers = myNumbers2
-.filter(element => element >= 0) // the first argument of this callback function is the element of the array
-.map(element => (`Hello ${element}`) + 2)
+const filteredNumbers = myNumbers2 // this syntax is used when having multiple methods in one object
+.filter(element => element >= 0) // the first argument of this callback function is the variable you wnat to compare your element to
+.map(element => (`Hello ${element}`) + 2) // creates array w/ new elements
 console.log(filteredNumbers) // outputs all the elements matching the condition inside a new array
 
 // Mapping an array //
 // use map() method to map an array //
-// the map() method compare
+// the map() method creates an array w/ the results of calling a function on evey element in the original array
+// ex.:
 
+const misNumeros = [1, 2, 3]
+
+const mapped = misNumeros.map(element => ({number: element})) // when having an object in the function body, you must encapsulate it w/ parantheses
+console.log(mapped)
+
+// Reducing an array //
+// Use reduce() method to reduce an array into a single element //
+// ex.: get the sum of all elements in an array
+
+const lista = [1, 9, 8]
+
+const sumAll = lista.reduce((accumulator, element) => accumulator + element);
+// this method takes a callback function as the first argument, and optionally a second argument that's the starting value for the accumulator
+// the function's first arg is the variable that will store all operations on the elements
+
+console.log(sumAll)
+
+// its like looping through all elements in an array and doing something w/ them
+
+const lista2 = [1, 9, 8]
+
+const mySum = lista2.reduce(
+    (accumulator, element) => {
+    return accumulator + element 
+}, 10) // 10 is the second arg of the reduce() method, that means accumulator's starting value is 10
+
+console.log(mySum)
